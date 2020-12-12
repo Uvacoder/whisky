@@ -1,2 +1,3 @@
 # whisky
-A collection of simple whiskey cocktail recipes
+
+A simple collection of whiskey cocktail recipes
