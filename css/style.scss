@@ -21,6 +21,8 @@ nav,
     justify-content: space-between;
     ul,
     div {
+        background-color: #EEE;
+        border-radius: $base/2;
         width: 100%;
     }
 }
@@ -32,7 +34,7 @@ a {
 @media screen and (min-width: 900px) {
 
     #ingredients div {
-        width: calc((100%/3) - #{$base});
+        width: calc((100%/3) - #{$base*3});
     }
 
 }
