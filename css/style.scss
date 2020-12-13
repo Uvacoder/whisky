@@ -19,11 +19,18 @@ nav,
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    ul,
+    > ul,
     div {
         background-color: #EEE;
         border-radius: $base/2;
         width: 100%;
+    }
+    > ul {
+        display: flex;
+        justify-content: space-between;
+        li {
+            width: calc((100%/3) - #{$base*3});
+        }
     }
 }
 
