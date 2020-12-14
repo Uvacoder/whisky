@@ -1,5 +1,7 @@
 $base: 8px;
 
+// Elements
+
 html {
     scroll-behavior: smooth;
 }
@@ -38,6 +40,16 @@ a {
     color: #222;
 }
 
+// IDs
+
+// Classes
+.error-page {
+    h1 {
+        color: darkred;
+    }
+}
+
+// Media Queries
 @media screen and (min-width: 900px) {
 
     #ingredients div {
