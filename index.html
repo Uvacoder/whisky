@@ -6,7 +6,7 @@
 	<meta name="keywords" content="" />
 	<meta name="author" content="Charanjit Chana" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Whisky recipes 🥃</title>
+	<title>Whisky Recipes 🥃</title>
 	<link type="text/css" rel="stylesheet" href="/css/style.css?v=9" />
 </head>
 <body>
@@ -15,7 +15,7 @@
 
 	<header>
 		<img src="/images/whisky-logo.svg" width="120" height="140" alt="Whisky" />
-		<h1>Whisky recipes 🥃</h1>
+		<h1>Whisky Recipes 🥃</h1>
 		<h2>A collection of simple cockatail recipes</h2>
 
 		<nav>
@@ -39,7 +39,7 @@
 					<li>Whisky or bourbon</li>
 					<li>Ice</li>
 					<li>Sugar syrup</li>
-					<li>Orange bitters</li>
+					<li>Angostura bitters</li>
 					<li>Lemon</li>
 					<li>Lime</li>
 				</ul>
@@ -77,7 +77,20 @@
 
 		<h2>Cocktail recipes</h2>
 
-		<p>Coming soon...</p>
+		<div id="counter">
+			<p>There are {{ counter }} recipes in this collection.</p>
+		</div>
+
+		<dl id="recipes-list">
+			<template v-for="recipe in recipes">
+				<dt><h4>{{ recipe.name }}</h4></dt>
+				<dd>
+					<ul>
+						<li v-for="ingredient in recipe.ingredients">{{ ingredient }}</li>
+					</ul>
+				</dd>
+			</template>
+		</dl>
 
 	</article>
 
@@ -96,6 +109,47 @@
 	</footer>
 
 </main>
+
+<script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
+<script>
+	const RecipesList = {
+  		data() {
+    		return {
+      			recipes: [
+					{
+					    "name": "Old Fashioned",
+					    "ingredients": [
+					        "Bourbon (or Rye Whisky)",
+							"Simple syrup or a sugar cube",
+					        "Water, tonic or soda",
+					        "Angostura bitters",
+					        "Ice"
+					    ]
+					},
+					{
+					    "name": "Whisky & Coke",
+					    "ingredients": [
+					        "Whisky",
+					        "Coke",
+					        "Ice"
+					    ]
+					}
+				]
+			}
+		}
+    }
+	RecipeCounter = {
+		data() {
+			return {
+	  			counter: recipes.length
+			}
+		}
+	};
+
+	Vue.createApp(RecipesList).mount('#recipes-list')
+
+	Vue.createApp(RecipeCounter).mount('#counter')
+</script>
 
 </body>
 </html>

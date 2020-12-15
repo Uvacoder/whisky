@@ -92,6 +92,14 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"/recipes.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/recipes-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		}
 	},
 "hooks": [
