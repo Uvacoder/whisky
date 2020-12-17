@@ -150,6 +150,29 @@
 
 	Vue.createApp(RecipeCounter).mount('#counter')
 </script>
+<script>
+if(allowedToTrack()) {
+    let rand = Math.floor(Math.random() * (9999999 - 1000000) ) + 1000000,
+        size = window.innerHeight+'x'+window.innerWidth;
+    fetch("https://123.charanj.it/xyz/api/"+rand+"/false/"+size);
+}
+// Can the user be tracked?
+function allowedToTrack() {
+    // if the browser supports the ability to turn of tracking
+    if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || (window.external && 'msTrackingProtectionEnabled' in window.external)) {
+        // and if the setting is on
+        if (window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.external.msTrackingProtectionEnabled()) {
+            // tracking not allowed
+            return false;
+        }
+    }
+    // otherwise, assume it's fine
+    return true;
+}
+</script>
+<noscript>
+<img src="https://123.charanj.it/xyz/api/<?php echo rand(1000000,9999999); ?>" alt="Basic Analytics" style="display: none;" height="0" width="0" />
+</noscript>
 
 </body>
 </html>
